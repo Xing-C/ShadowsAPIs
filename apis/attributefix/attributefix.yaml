@@ -1,4 +1,4 @@
-forge-1.16.5:
+forge-1.20.1:
   gradle: |
     repositories {
         maven {
@@ -8,10 +8,9 @@ forge-1.16.5:
             }
         }
     }
-    dependencies {
-       compileOnly fg.deobf("curse.maven:obfuscate-289380:3740120")
-       runtimeOnly fg.deobf("curse.maven:obfuscate-289380:3740120")
-    }
+      dependencies {
+        implementation fg.deobf("curse.maven:attributefix-280510:4714729")
+      }
   update_files:
     - ~
-name: "obfuscate"
+name: "AttributeFix"

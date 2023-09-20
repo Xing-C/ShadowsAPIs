@@ -46,4 +46,19 @@ forge-1.19:
     }
   update_files:
     - ~
+forge-1.20.1:
+  gradle: |
+    repositories {
+        maven {
+            url "https://www.cursemaven.com"
+            content {
+                includeGroup "curse.maven"
+            }
+        }
+    }
+    dependencies {
+      implementation fg.deobf("curse.maven:architectury-api-419699:4663010")
+    }
+  update_files:
+    - ~
 name: "architectury"

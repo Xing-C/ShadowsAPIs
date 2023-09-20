@@ -61,4 +61,27 @@ forge-1.18.2:
     }
   update_files:
     - ~
+forge-1.20.1:
+  gradle: |
+    minecraft {
+        runs {
+            client {
+                property 'mixin.env.remapRefMap', 'true'
+                property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+            }
+        }
+    }
+    repositories {
+        maven {
+            url "https://www.cursemaven.com"
+            content {
+                includeGroup "curse.maven"
+            }
+        }
+    }
+    dependencies { 
+        implementation fg.deobf("curse.maven:curios-309927:4738776")
+    }
+  update_files:
+    - ~
 name: "curios"
